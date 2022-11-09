@@ -2,14 +2,14 @@ public class LastLinkListApp {
     public static void main(String[] args) {
         LastLinkList myList = new LastLinkList();
 
-        myList.insertLast(5);
-        myList.insertLast(6);
-        myList.insertLast(7);
-        myList.insertLast(8);
-        myList.insertFirst(4);
-        myList.insertFirst(3);
-        myList.insertFirst(2);
-        myList.insertFirst(1);
+        myList.sortInsert(5);
+        myList.sortInsert(6);
+        myList.sortInsert(7);
+        myList.sortInsert(8);
+        myList.sortInsert(4);
+        myList.sortInsert(3);
+        myList.sortInsert(2);
+        myList.sortInsert(1);
         myList.displayList();
 
     }
@@ -44,6 +44,24 @@ class LastLinkList{
         }
         item.next = first;
         first = item;
+    }
+
+    public void sortInsert(int data){
+        Item prev = null;
+        Item current = first;
+        Item newItem = new Item(data);
+
+        while (current != null && data > current.data){
+            prev = current;
+            current = current.next;
+        }
+        if (prev == null){
+            first = newItem;
+        } else{
+            prev.next = newItem;
+        }
+        newItem.next = current;
+
     }
 
     public void insertLast(int data){
