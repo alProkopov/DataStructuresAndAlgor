@@ -41,11 +41,11 @@ class DoubleList {
     }
 
 
-    public void insertLast(int data){
+    public void insertLast(int data) {
         DoubleLink newItem = new DoubleLink(data);
-        if (isEmpty()){
+        if (isEmpty()) {
             first = newItem;
-        } else{
+        } else {
             last.next = newItem;
 
         }
