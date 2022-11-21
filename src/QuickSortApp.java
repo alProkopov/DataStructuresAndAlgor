@@ -1,7 +1,7 @@
 public class QuickSortApp {
     public static void main(String[] args) {
         int[] myArr = new int[]{4, 3, 1, 8, 6, 2, 7, 1, 2, 3};
-        quickSort(myArr, 0, myArr.length - 1);
+        quickSort(myArr, 0, myArr.length-1);
         for (int item : myArr) {
             System.out.print(item + " ");
         }
@@ -14,7 +14,6 @@ public class QuickSortApp {
             return;
         }
         int index = partition(array, start, end);
-
         quickSort(array, start, index - 1);
         quickSort(array, index, end);
     }
