@@ -21,8 +21,8 @@ public class HashApp {
 }
 
 class HashTable {
-    private HashItem[] data;
-    private int size;
+    protected HashItem[] data;
+    protected int size;
 
     private HashItem nonItem;
 
@@ -33,7 +33,7 @@ class HashTable {
     }
 
 
-    private int toHash(int key) {
+    protected int toHash(int key) {
         return key % size;
     }
 
