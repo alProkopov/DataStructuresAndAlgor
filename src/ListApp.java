@@ -23,6 +23,15 @@ class Link {
         this.s = s;
     }
 
+    Link(int i) {
+        this.i = i;
+
+    }
+
+    public int getKey(){
+        return this.i;
+    }
+
     public void displayLink() {
         System.out.print("{String: " + s + ", int: " + i + "} ");
     }
@@ -37,6 +46,13 @@ class LinkList {
 
     public void insertFirst(int i, String s) {
         Link link = new Link(i, s);
+        link.next = first;
+        this.first = link;
+
+    }
+
+    public void insertFirst(int i) {
+        Link link = new Link(i);
         link.next = first;
         this.first = link;
 
